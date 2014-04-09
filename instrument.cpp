@@ -24,10 +24,11 @@ void Instrument::attach(servoPin){
   servoMotor.attach(servoPin);
 }
 
-void Instrument::pattern(){
-  interval1 = analogRead(i1Pin);
-  interval2 = analogRead(i2Pin);
+void Instrument::pattern(int _interval1, int _interval2){
+  i1 = _interval1; 
+  i2 = _interval2;
   //need logic on reacting depending on the value
+
 }
 
 void Instrument::attention(){

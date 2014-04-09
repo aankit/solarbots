@@ -6,16 +6,16 @@
 
 class Instrument
 {
-  public:
-    Instrument(int _pin, boolean _servo);
+public:
+    Instrument(int _pin, bool _servo);
     //play functions
     
-    void pattern(int _realTime, int _start, int _interval, int_duration);
+    void pattern(int _interval1, int _interval2);
     void attention();
     void play();
     void servoPlay(int startAngle, int strikeAngle);
     
-
+private:
     //if its a servo we need this stuff.
     Servo servoMotor;
     void attach();
@@ -26,12 +26,12 @@ class Instrument
     bool servo;
     //timing vars
     long att;
+    long prevMillis;
     long realTime;
     bool stop;
-    //instantiated/overwritten in the pattern function
-    int start;
-    int interval;
-    int duration;
+    //interval vars sent by the Panel class
+    int i1;
+    int i2;
 };
 
 #endif
